@@ -48,12 +48,12 @@ void setup() {
 void loop() {
   timeClient.update();
   
-  int hours = timeClient.getHours();
+  int hours = timeClient.getHours();  //Saat ve dakika bilgisi çekiliyor
   int minutes = timeClient.getMinutes();
   
   displayTime(hours, minutes);
   if(minutes == 0 && counter < 4){
-    if (millis() - timer > 200){ // Her 100 ms de led ve buzzer'in durumu değişerek ses ve ışık yayması sağlandı
+    if (millis() - timer > 200){ // Her 100 ms de buzzer'in durumu değişerek ses yayması sağlandı
       counter++;
       buzz = !buzz;
       digitalWrite(buzzer, buzz);
